@@ -1,0 +1,79 @@
+// dist/scss/show.scss
+@use 'sass:color';
+@use 'variaveis';
+
+.show-details {
+    padding: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: variaveis.$corDeFundo;
+
+    &__container {
+        max-width: 800px;
+        width: 100%;
+        text-align: center;
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+
+        .back-button {
+            align-self: flex-start;
+            margin-bottom: 24px;
+            width: auto;
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: variaveis.$corDeFundoBotaoSecundario;
+            color: variaveis.$corTextoSecundario;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            &:hover {
+                background-color: color.scale(variaveis.$corDeFundoBotaoSecundario, $lightness: -10%);
+                transform: translateY(-2px);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
+
+        #show-title {
+            margin-bottom: 16px;
+        }
+
+        #show-description {
+            margin-bottom: 16px;
+        }
+
+        #show-stars {
+            font-size: 24px;
+            color: variaveis.$corTextoSecundario;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .show-details__container {
+        padding: 0 2vw;
+
+        img {
+            max-width: 100%;
+        }
+
+        .back-button {
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+    }
+}
